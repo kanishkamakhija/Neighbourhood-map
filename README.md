@@ -1,4 +1,4 @@
-#Neighbourhood-map
+# Neighbourhood-map
 
 ## About
 This is a single-page application featuring a map of your neighborhood or a neighborhood you would like to visit. 
@@ -7,11 +7,9 @@ places you’d like to visit, a search function to easily discover these locatio
 browsing of all locations.There is an implementation of third-party APIs that provide additional information about 
 each of these locations (such as Likes, Ratings, Images, etc).
 
-##Installation
+## Installation
 * Clone this repository on your device.
 * Unzip the files.
-
-##Pre-Requisites
 
 ### Skills:
 * HTML
