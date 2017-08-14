@@ -11,6 +11,8 @@ each of these locations (such as Likes, Ratings, Images, etc).
 * Clone this repository on your device.
 * Unzip the files.
 
+## Pre-Requisites
+
 ### Skills:
 * HTML
 * CSS
