@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Neighborhood Map</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-min.js"></script>
+    <!-- <script async defer type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFGG_lPHLHiWYZI1tFo9zmMReVB6QmYNE&v=3&callback=initMap">
+  </script> -->
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="mySidenav" class="sidenav">
+        <span style="display:block">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <input id="places-search" onkeyup="mysrch()" class="search-field" type="text" data-bind="value: searchPlace ,valueUpdate: 'afterkeydown', event: { keyup: mrkers}" placeholder="Enter the place to search">
+    </span>
+        <br><br>
+        <ul id="myUL">
+            <p>Qutb Minar</p>
+            <br>
+            <p>Humayun's Tomb</p>
+            <br>
+            <p>Red Fort</p>
+            <br>
+            <p>Jama Masjid</p>
+            <br>
+            <p>Akshardham</p>
+            <br>
+        </ul>
+
+    </div>
+    <div id="main">
+
+        <div class="fluid-container">
+            <div id="nbh-map" class="row">
+                <span onclick="openNav()"><i class="material-icons">menu</i>
+                <h3>Neighborhood Map</h3>
+
+            </span>
+            </div>
+            <div row>
+                <div id="map" class="col-md-12"></div>
+            </div>
+
+
+        </div>
+
+    </div>
+    <script>
+        var map;
+
+        function initMap() {
+
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: {
+                    lat: 28.6387443,
+                    lng: 77.0270049,
+                },
+                draggable: true,
+                styles: styles,
+                zoom: 11
+            });
+            ko.applyBindings(new viewModel());
+
+        }
+    </script>
+
+    <script src="js/map-style.js"></script>
+    <script src="js/map-data.js"></script>
+    <script src="js/app.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFGG_lPHLHiWYZI1tFo9zmMReVB6QmYNE&v=3&callback=initMap">
+    </script>
+</body>
+
+</html>

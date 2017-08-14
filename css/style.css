@@ -1,0 +1,189 @@
+html, body {
+    font-family: 'Lora', sans-serif;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #c0392b;
+    font-size: 15px;
+}
+
+#map {
+    height: 100vh;
+    margin: 10px;
+    border: 1px solid black;
+}
+
+#nbh-map {
+    display: block;
+}
+
+span {
+    font-size: 1.17em;
+    font-weight: bold;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    margin-left: 2vw;
+}
+
+.options-box {
+    background: #fff;
+    /*border: 1px solid #999;*/
+    /*border-radius: 3px;*/
+    height: 100%;
+    line-height: 35px;
+    text-align: left;
+    width: 340px;
+}
+
+.float-label {
+    float: left;
+    position: relative;
+    width: 50%;
+    border-bottom: 2px solid black;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+input {
+    margin: 5px;
+    padding: 5px;
+    width: 80%;
+    display: inline;
+    position: relative;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 1px solid black;
+}
+
+label {
+    position: inherit;
+    ;
+    padding-left: 30px;
+    font-size: 1.17em;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 1.17em;
+    font-weight: bold;
+    padding-left: 30px;
+    display: inline-table;
+}
+
+.material-icons {
+    cursor: -webkit-grab;
+}
+
+
+/* The side navigation menu */
+
+.sidenav {
+    height: 100%;
+    /* 100% Full-height */
+    width: 0;
+    /* 0 width - change this with JavaScript */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Stay on top */
+    top: 0;
+    left: 0;
+    background-color: #ecf0f1;
+    /* Black*/
+    overflow-x: hidden;
+    /* Disable horizontal scroll */
+    padding-top: 60px;
+    /* Place content 60px from the top */
+    transition: 0.5s;
+    /* 0.5 second transition effect to slide in the sidenav */
+}
+
+
+/* The navigation menu links */
+
+.sidenav li a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s
+}
+
+
+/* When you mouse over the navigation links, change their color */
+
+.sidenav p:hover, .offcanvas p:focus {
+    color: #f1f1f1;
+}
+
+
+/* Position and style the close button (top right corner) */
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    color: #95a5a6;
+    text-decoration: none;
+}
+
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+
+#main {
+    transition: margin-left .5s;
+    padding: 20px;
+}
+
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+    .sidenav a.closebtn {
+        font-size: 18px;
+    }
+}
+
+
+/*#place-search {
+    background-image: url('/css/searchicon.png'); /* Add a search icon to input */
+
+background-position: 10px 12px;
+
+/* Position the search icon */
+
+background-repeat: no-repeat;
+
+/* Do not repeat the icon image */
+
+width: 100%;
+
+/* Full-width */
+
+font-size: 16px;
+
+/* Increase font-size */
+
+padding: 12px 20px 12px 40px;
+
+/* Add some padding */
+
+border: 1px solid #ddd;
+
+/* Add a grey border */
+
+margin-bottom: 12px;
+
+/* Add some space below the input */
+
+
+}
