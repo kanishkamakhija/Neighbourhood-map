@@ -1,4 +1,4 @@
-### Neighbourhood-map
+#Neighbourhood-map
 
 ## About
 This is a single-page application featuring a map of your neighborhood or a neighborhood you would like to visit. 
@@ -13,16 +13,16 @@ each of these locations (such as Likes, Ratings, Images, etc).
 
 ##Pre-Requisites
 
-# Skills:
+### Skills:
 * HTML
 * CSS
 * Javascript
 
-# Libraries:
+### Libraries:
 * Knockout.js
 * JQuery
 
-# External APIs
+### External APIs
 * Here an API of foursquare have been used to fetch the details of a location.
 
 ## To Run
