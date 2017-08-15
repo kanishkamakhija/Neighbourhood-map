@@ -109,15 +109,18 @@ var viewModel = function() {
         });
         self.addInfoToWindow(marker);
         self.markers().push(marker);
-        marker.addListener('click', function() {
-            self.toggleBounce(this);
-        });
-        marker.addListener('click', function() {
-            self.populateinfowindow(this, self.infowindow);
-        });
+        marker.addListener('click', toggleMarker);
+        marker.addListener('click', fillInfoWindow);
 
     }
 
+    function fillInfoWindow() {
+        self.populateinfowindow(this, self.infowindow);
+    }
+
+    function toggleMarker() {
+        self.toggleBounce(this);
+    }
     self.showAll = function() {
         for (var i = 0; i < locations.length; i++) {
             self.markers()[i].visiblity(true);
