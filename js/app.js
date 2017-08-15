@@ -20,33 +20,13 @@ function closeNav() {
     document.getElementById("main").style.marginLeft = "0";
 }
 
-function mysrch() {
-    var self = this;
-    this.searchPlace = ko.observable('');
-    this.searchPlace = document.getElementById('places-search').value;
-    var ul, li;
-    ul = document.getElementById("myUL");
-    p = ul.getElementsByTagName('p');
-    if (this.searchPlace != null) {
-        for (i = 0; i < p.length; i++) {
-            var res = p[i].innerHTML.toLowerCase();
-            if (res.indexOf(this.searchPlace.toLowerCase()) >= 0) {
-                p[i].style.display = "";
-            } else {
-                p[i].style.display = "none";
-            }
-        }
-    } else {
-        ul.style.display = "";
-    }
-}
 
 var bounds;
 var viewModel = function() {
     "use strict";
 
     var self = this;
-    var markers = [];
+    self.markers = ko.observableArray([]);
     var marker;
     var content;
 
@@ -58,9 +38,11 @@ var viewModel = function() {
         } else {
             for (var i = 0; i < locations.length; i++) {
                 if (locations[i].title.indexOf(this.searchPlace().toLowerCase()) >= 0) {
-                    markers[i].setMap(map);
+                    self.markers()[i].setMap(map);
+                    self.markers()[i].visiblity(true);
                 } else {
-                    markers[i].setMap(null);
+                    self.markers()[i].visiblity(false);
+                    self.markers()[i].setMap(null);
                 }
             }
         }
@@ -85,6 +67,10 @@ var viewModel = function() {
 
         }
     };
+
+    self.showWindow = function() {
+        self.populateinfowindow(this, self.infowindow)
+    }
 
     self.toggleBounce = function(marker) {
         marker.setAnimation(google.maps.Animation.BOUNCE);
@@ -119,10 +105,10 @@ var viewModel = function() {
             animation: google.maps.Animation.DROP,
             id: locations[i].id,
             img: locations[i].icon,
-
+            visiblity: ko.observable(false),
         });
         self.addInfoToWindow(marker);
-        markers.push(marker);
+        self.markers().push(marker);
         marker.addListener('click', function() {
             self.toggleBounce(this);
         });
@@ -134,7 +120,8 @@ var viewModel = function() {
 
     self.showAll = function() {
         for (var i = 0; i < locations.length; i++) {
-            markers[i].setMap(map);
+            self.markers()[i].visiblity(true);
+            self.markers()[i].setMap(map);
         }
     };
     self.showAll();

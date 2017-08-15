@@ -3,7 +3,7 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-    background-color: #c0392b;
+    background-color: #e74c3c;
     font-size: 15px;
 }
 
@@ -91,7 +91,7 @@ h3 {
     /* Stay on top */
     top: 0;
     left: 0;
-    background-color: #ecf0f1;
+    background-color: #34495e;
     /* Black*/
     overflow-x: hidden;
     /* Disable horizontal scroll */
@@ -116,8 +116,9 @@ h3 {
 
 /* When you mouse over the navigation links, change their color */
 
-.sidenav p:hover, .offcanvas p:focus {
+.sidenav li:hover, .offcanvas li:focus {
     color: #f1f1f1;
+    cursor: default;
 }
 
 
@@ -153,37 +154,10 @@ h3 {
     }
 }
 
+input.hover {
 
-/*#place-search {
-    background-image: url('/css/searchicon.png'); /* Add a search icon to input */
-
-background-position: 10px 12px;
-
-/* Position the search icon */
-
-background-repeat: no-repeat;
-
-/* Do not repeat the icon image */
-
-width: 100%;
-
-/* Full-width */
-
-font-size: 16px;
-
-/* Increase font-size */
-
-padding: 12px 20px 12px 40px;
-
-/* Add some padding */
-
-border: 1px solid #ddd;
-
-/* Add a grey border */
-
-margin-bottom: 12px;
-
-/* Add some space below the input */
-
-
+/* webkit solution */
+::-webkit-input-placeholder { text-align:right; }
+/* mozilla solution */
+input:-moz-placeholder { text-align:right; }
 }

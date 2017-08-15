@@ -8,8 +8,6 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-min.js"></script>
-    <!-- <script async defer type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFGG_lPHLHiWYZI1tFo9zmMReVB6QmYNE&v=3&callback=initMap">
-  </script> -->
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
@@ -19,20 +17,15 @@
     <div id="mySidenav" class="sidenav">
         <span style="display:block">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <input id="places-search" onkeyup="mysrch()" class="search-field" type="text" data-bind="value: searchPlace ,valueUpdate: 'afterkeydown', event: { keyup: mrkers}" placeholder="Enter the place to search">
+        <input id="places-search" class="search-field" type="text" data-bind="value: searchPlace ,valueUpdate: 'afterkeydown', event: { keyup: mrkers }" placeholder="Enter the place to search">
     </span>
         <br><br>
-        <ul id="myUL">
-            <p>Qutb Minar</p>
-            <br>
-            <p>Humayun's Tomb</p>
-            <br>
-            <p>Red Fort</p>
-            <br>
-            <p>Jama Masjid</p>
-            <br>
-            <p>Akshardham</p>
-            <br>
+        <ul id="myUL" type="none">
+            <!-- ko foreach: markers -->
+                <!--ko if: visiblity -->
+                    <br> <li class="list-location" data-bind="text: title.toUpperCase(), click: $parent.showWindow"> <br>
+                <!-- /ko -->
+            <!-- /ko -->
         </ul>
 
     </div>
@@ -60,8 +53,8 @@
 
             map = new google.maps.Map(document.getElementById('map'), {
                 center: {
-                    lat: 28.6387443,
-                    lng: 77.0270049,
+                    lat: 28.5677,
+                    lng: 77.2433,
                 },
                 draggable: true,
                 styles: styles,

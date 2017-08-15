@@ -44,7 +44,7 @@ var locations = [{
             lat: 28.6127,
             lng: 77.2773
         },
-        icon : "img/akshardham.jpg",
+        icon: "img/akshardham.jpg",
         id: '53490086498e429cc0013382'
 
     }
