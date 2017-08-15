@@ -33,7 +33,7 @@ var viewModel = function() {
     self.searchPlace = ko.observable('');
 
     self.mrkers = function() {
-        if (this.searchPlace().length == '') {
+        if (this.searchPlace().length === '') {
             this.showAll();
         } else {
             for (var i = 0; i < locations.length; i++) {
