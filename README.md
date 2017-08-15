@@ -23,7 +23,7 @@ each of these locations (such as Likes, Ratings, Images, etc).
 * JQuery
 
 ### External APIs
-* Here an API of foursquare have been used to fetch the details of a location.
+* Here an API of foursquare has been used to fetch the details of a location.
 
 ## To Run
 
