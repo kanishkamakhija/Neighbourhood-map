@@ -46,7 +46,7 @@ var viewModel = function() {
                 }
             }
         }
-    }
+    };
 
     self.infowindow = new google.maps.InfoWindow({
         maxWidth: 300,
@@ -57,20 +57,20 @@ var viewModel = function() {
         // check to mk sure infowindow is not alrdy closed
         if (self.infowindow.marker != marker) {
             self.infowindow.marker = marker;
-            content = '<div>' + marker.title + '<br>' + marker.likes + '<br>' + marker.rating + '<br><img src="' + marker.img + '" alt="marker-img" height="100" width="100"/>' + '</div>'
+            content = '<div>' + marker.title + '<br>' + marker.likes + '<br>' + marker.rating + '<br><img src="' + marker.img + '" alt="marker-img" height="100" width="100"/>' + '</div>';
             self.infowindow.setContent(content);
             self.infowindow.open(map, marker);
-            // self.infowindow.addListener('closeclick', function() {
-            //     self.infowindow.setMarker(null);
-            // });
+            self.infowindow.addListener('closeclick', function() {
+                self.infowindow.marker = "";
+            });
             // map.panTo(marker.getPosition())
 
         }
     };
 
     self.showWindow = function() {
-        self.populateinfowindow(this, self.infowindow)
-    }
+        self.populateinfowindow(this, self.infowindow);
+    };
 
     self.toggleBounce = function(marker) {
         marker.setAnimation(google.maps.Animation.BOUNCE);
@@ -125,4 +125,4 @@ var viewModel = function() {
         }
     };
     self.showAll();
-}
+};
