@@ -36,11 +36,11 @@ var viewModel = function() {
         } else {
             for (var i = 0; i < locations.length; i++) {
                 if (locations[i].title.indexOf(this.searchPlace().toLowerCase()) >= 0) {
-                    self.markers()[i].setMap(map);
+                    self.markers()[i].setVisible(true);
                     self.markers()[i].visiblity(true);
                 } else {
                     self.markers()[i].visiblity(false);
-                    self.markers()[i].setMap(null);
+                    self.markers()[i].setVisible(false);
                 }
             }
         }
@@ -67,6 +67,7 @@ var viewModel = function() {
     };
 
     self.showWindow = function() {
+        self.toggleBounce(this)
         self.populateinfowindow(this, self.infowindow);
     };
 
@@ -85,12 +86,14 @@ var viewModel = function() {
                 // stores results to display likes and ratings
                 var result = data.response.venue;
                 // add likes and ratings to marker
-                marker.likes = result.hasOwnProperty('likes') ? result.likes.summary : "";
-                marker.rating = result.hasOwnProperty('rating') ? result.rating : "";
+                marker.likes = result.likes.summary  ? result.likes.summary : "No Likes";
+                marker.rating = result.hasOwnProperty('rating') ? result.rating : "No Rating";
             },
             //alert if there is error in recievng json
             error: function(xhr, status, thrownError) {
                 console.log("Foursquare data is unavailable. Please try again later.");
+                marker.likes = "FS Like Data unavailable";
+                marker.rating = "FS Rating Data unavailable";
             }
         });
     };

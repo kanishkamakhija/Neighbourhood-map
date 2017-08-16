@@ -63,12 +63,15 @@
             ko.applyBindings(new viewModel());
 
         }
+        function errorMap(){
+            window.alert("Ooops! Something went wrong with google maps API")
+        };
     </script>
 
     <script src="js/map-style.js"></script>
     <script src="js/map-data.js"></script>
     <script src="js/app.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFGG_lPHLHiWYZI1tFo9zmMReVB6QmYNE&v=3&callback=initMap">
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFGG_lPHLHiWYZI1tFo9zmMReVB6QmYNE&v=3&callback=initMap" onerror="errorMap()">
     </script>
 </body>
 
