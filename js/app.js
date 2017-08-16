@@ -67,7 +67,7 @@ var viewModel = function() {
     };
 
     self.showWindow = function() {
-        self.toggleBounce(this)
+        self.toggleBounce(this);
         self.populateinfowindow(this, self.infowindow);
     };
 
