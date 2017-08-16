@@ -23,8 +23,6 @@ function closeNav() {
 
 var bounds;
 var viewModel = function() {
-    "use strict";
-
     var self = this;
     self.markers = ko.observableArray([]);
     var marker;
